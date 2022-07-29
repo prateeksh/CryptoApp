@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CryptoApp</string>
+
+    <string name="baseAsset">Coin</string>
+    <string name="openPrice">Price Today</string>
+    <string name="lowPrice">Low Price</string>
+    <string name="highPrice">High Price</string>
+    <string name="lastPrice">Last Open</string>
+    <string name="volume">Volume</string>
+    <string name="bidPrice">Bid Price</string>
+    <string name="askPrice">Ask Price</string>
+
+    <string name="Rs">\u20B9</string>
+    <string name="low_high">low / high</string>
+    <string name="purchase_price">purchase price</string>
+    <string name="no_internet">no internet</string>
+
+</resources>

@@ -54,9 +54,7 @@ class CryptoDetailActivity : AppCompatActivity() {
             ViewModelProvider(this).get(CryptoDetailViewModel::class.java)
 
         val ss: String = intent.getStringExtra("SYM").toString()
-        Log.e("CryptoDetailActivity", "onCreate: "+ ss )
 
-        Log.e("Fragment", "onViewCreated: network connected", )
         constraint.isVisible = false
         progressBar.isVisible = true
         noInternet.isVisible = false
@@ -94,7 +92,7 @@ class CryptoDetailActivity : AppCompatActivity() {
             constraint.isVisible = true
             progressBar.isVisible = false
             detailViewModel.mCryptoDetail!!.observe(this, Observer {
-                Log.e("Fragment", "updating data on refresh........",)
+
                 coin.text = detailViewModel.mCryptoDetail!!.value!!.symbol.toString()
                 lowPrice.text = detailViewModel.mCryptoDetail!!.value!!.lowPrice.toString()
                 highPrice.text = detailViewModel.mCryptoDetail!!.value!!.highPrice.toString()

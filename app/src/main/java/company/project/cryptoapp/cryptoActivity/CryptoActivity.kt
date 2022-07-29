@@ -50,15 +50,12 @@ class CryptoActivity : AppCompatActivity() {
 
 
         if (NetworkUtils.isInternetAvailable(this)) {
-            Log.e("Fragment", "onViewCreated: network connected", )
             cryptoViewModel.init()
             updateViews()
         }else{
             constraint.isVisible = false
             progressBar.isVisible = false
             noInternet.isVisible = true
-
-            Log.e("Fragment", "onViewCreated: network not connected", )
         }
 
         swipeRefreshLayout.setOnRefreshListener {
@@ -97,13 +94,9 @@ class CryptoActivity : AppCompatActivity() {
                     startActivity(intent)
 
 
-                    cryptoList.symbol?.let { Log.e("onCreate: ItemClicked ", it) }
-
                 }
 
             })
-        }else{
-            Log.e("Home Fragment", "coins data is null" )
         }
 
     }

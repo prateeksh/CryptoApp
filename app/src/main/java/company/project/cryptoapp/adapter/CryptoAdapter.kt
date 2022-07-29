@@ -20,31 +20,19 @@ class CryptoAdapter (private val coinsList: List<CryptoList>): RecyclerView.Adap
 
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.crypto_view_design, parent, false)
-        Log.e("CoinsAdapter ", "adapter called: " )
+
         return CoinsViewHolder(view)
 
     }
 
     override fun onBindViewHolder(holder: CoinsViewHolder, position: Int) {
 
-        //val image = dataList.get(position).pictures?.front?.url
-
-
-        /*if (image != null){
-
-            Glide
-                .with(holder.itemView.context)
-                .load(image)
-                .into(holder.image)
-        }
-*/
         if (coinsList[position].message == null ) {
             holder.highPrice.text = coinsList[position].highPrice
             holder.lowPrice.text = coinsList[position].lowPrice
             holder.bidPrice.text = coinsList[position].bidPrice
             holder.name.text = coinsList[position].baseAsset
         }else{
-            Log.e("CoinsAdapter ", "adapter called:  " + coinsList[position].message )
             holder.errorMessage.text = coinsList[position].message
         }
     }

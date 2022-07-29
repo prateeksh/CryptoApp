@@ -23,18 +23,14 @@ class CryptoDataRepository {
 
     fun getCoinsData(): MutableLiveData<List<CryptoList>> {
 
-        Log.e("Repository Class", "getCoinsData: method called ", )
-        val retrofitCall = apiService.getCoins()
 
-        Log.e("Repository Class", retrofitCall.request().url().toString() )
+        val retrofitCall = apiService.getCoins()
         retrofitCall.enqueue(object : Callback<List<CryptoList>> {
             override fun onResponse(call: Call<List<CryptoList>>, response: Response<List<CryptoList>>) {
                 dataset.value = response.body()!!
-                Log.e("RetrofitCall", response.body().toString())
             }
 
             override fun onFailure(call: Call<List<CryptoList>>, t: Throwable) {
-                Log.e("RetrofitCall", t.toString()  )
             }
 
 
